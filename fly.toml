@@ -1,0 +1,18 @@
+# fly.toml app configuration file generated for loof-vpn on 2024-07-13T20:55:47Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'loof-vpn'
+primary_region = 'cdg'
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ['app']
+
+[[vm]]
+  size = 'shared-cpu-1x'
